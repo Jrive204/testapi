@@ -11,12 +11,15 @@ module.exports = {
     migrations: {
       directory: './database/migrations',
       tableName: 'knex_migrations'
+    },
+    seeds: {
+      directory: './seeds/dev'
     }
   },
 
   testing: {
     client: 'pg',
-    connection: 'postgresql://localhost/testing',
+    connection: 'postgresql://localhost/school',
 
     pool: {
       min: 2,

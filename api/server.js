@@ -1,20 +1,20 @@
 const express = require('express');
 const helmet = require('helmet');
 const cors = require('cors');
-const server = express();
-require('dotenv').config();
 
-const cohortsRouter = require('../cohorts/router');
-const studentRouter = require('../students/router');
+const cohortsRouter = require('../cohorts/router.js');
+const studentsRouter = require('../students/router.js');
+
+const server = express();
 
 // middleware
 server.use(express.json());
-server.use(helmet());
 server.use(cors());
+server.use(helmet());
 
 // routes
 server.use('/api/cohorts', cohortsRouter);
-server.use('/api/students', studentRouter);
+server.use('/api/students', studentsRouter);
 
 server.get('/', (req, res) => {
   res.json({ api: 'up' });
