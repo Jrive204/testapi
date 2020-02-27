@@ -2,6 +2,7 @@ const express = require('express');
 const helmet = require('helmet');
 const cors = require('cors');
 const server = express();
+require('dotenv').config();
 
 const cohortsRouter = require('../cohorts/router');
 const studentRouter = require('../students/router');
